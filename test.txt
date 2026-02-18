@@ -104,3 +104,8 @@ resource.type="audited_resource"
 resource.labels.service="discoveryengine.googleapis.com"
 protoPayload.serviceName="discoveryengine.googleapis.com"
 protoPayload.methodName:"NotebookService"
+
+gcloud logging read \
+  'protoPayload.serviceName="discoveryengine.googleapis.com" AND protoPayload.methodName:"NotebookService"' \
+  --project=394998728779 \
+  --format=json | grep -i notebookId
