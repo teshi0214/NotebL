@@ -1,0 +1,43 @@
+追加
+curl -X POST \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "Content-Type: application/json" \
+  "https://global-discoveryengine.googleapis.com/v1alpha/projects/PROJECT_NUMBER/locations/global/notebooks/NOTEBOOK_ID/sources:batchCreate" \
+  -d '{
+    "userContents": [
+      {
+        "webContent": {
+          "url": "https://your-target-site.com",
+          "sourceName": "ソース表示名"
+        }
+      }
+    ]
+  }'
+
+
+削除
+curl -X POST \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "Content-Type: application/json" \
+  "https://global-discoveryengine.googleapis.com/v1alpha/projects/PROJECT_NUMBER/locations/global/notebooks/NOTEBOOK_ID/sources:batchDelete" \
+  -d '{
+    "names": [
+      "projects/PROJECT_NUMBER/locations/global/notebooks/NOTEBOOK_ID/source/SOURCE_ID"
+    ]
+  }'
+
+https://notebooklm.google.com/notebook/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+
+ソースID
+curl -X GET \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "Content-Type: application/json" \
+  "https://global-discoveryengine.googleapis.com/v1alpha/projects/PROJECT_NUMBER/locations/global/notebooks/NOTEBOOK_ID/sources"
+
+
+
+curl -X GET \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "Content-Type: application/json" \
+  "https://global-discoveryengine.googleapis.com/v1alpha/projects/PROJECT_NUMBER/locations/global/notebooks"
