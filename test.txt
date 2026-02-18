@@ -96,3 +96,11 @@ SOURCE_ID       → sources一覧API or ソース追加時のレスポンス
 
 
 https://vertexaisearch.cloud.google.com/home/cid/ba78b6b5-9911-449a-b28a-d25de0cdaa51/r/notebook?hl=ja__ 
+
+
+
+Log
+resource.type="audited_resource"
+resource.labels.service="discoveryengine.googleapis.com"
+protoPayload.serviceName="discoveryengine.googleapis.com"
+protoPayload.methodName:"NotebookService"
